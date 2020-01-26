@@ -14,9 +14,6 @@ then
    return 1
 fi
 
-
-
-
 # Get directory we are running from
 DIR=$(pwd)
 DATAFILE="$DIR/$1"
@@ -28,8 +25,6 @@ if [ ! -f "$DATAFILE" ]; then
     echo "setenv: Configuration file not found: $DATAFILE"
     return 1
 fi
-
-
 
 # Get env from DATAFILE
 ENVIRONMENT=$(sed -nr 's/^\s*environment\s*=\s*"([^"]*)".*$/\1/p' "$DATAFILE")
@@ -81,16 +76,10 @@ region = "${S3BUCKETREGION}"
 EOF
 cat backend.tf
 rm -rf  .terraform/terraform.tfstate
-terraform_0.12.19 init
-
-
+terraform init
 
 echo "#################"
 
-
 echo "Please use terraform_0.12.19"
-
-
-
 
 echo "#################"
