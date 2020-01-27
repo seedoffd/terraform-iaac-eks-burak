@@ -1,7 +1,7 @@
 output "cluster_name" {
-  value = "${var.region}"
+  value = "${var.cluster_name}"
 }
 
 output "region" {
-  value = "${var.cluster_name}"
+  value = "${var.region}"
 }
