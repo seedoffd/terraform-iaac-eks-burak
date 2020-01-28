@@ -12,6 +12,9 @@ resource "null_resource" "login" {
     provisioner "local-exec" {
     command = "mv kubectl /bin/kubectl_eks"
   }
+      provisioner "local-exec" {
+    command = "rm -rf /bin/kubectl"
+  }
     provisioner "local-exec" {
     command = "curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/aws-iam-authenticator"
   }
