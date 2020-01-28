@@ -12,7 +12,7 @@ resource "null_resource" "login" {
     provisioner "local-exec" {
     command = "mv kubectl /bin/kubectl_eks"
   }
-      provisioner "local-exec" {
+    provisioner "local-exec" {
     command = "rm -rf /bin/kubectl"
   }
     provisioner "local-exec" {
