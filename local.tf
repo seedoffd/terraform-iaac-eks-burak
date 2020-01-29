@@ -22,10 +22,10 @@ resource "null_resource" "login" {
     command = "sudo mv aws-iam-authenticator /bin"
   }
     provisioner "local-exec" {
-    command = "kubectl_eks get nodes"
+    command = "kubectl get nodes"
   }
    provisioner "local-exec" {
-    command = "kubectl_eks get ns"
+    command = "kubectl get ns"
   }
 
 
