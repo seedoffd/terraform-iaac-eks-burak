@@ -7,19 +7,19 @@ resource "null_resource" "login" {
     command = "curl -LO https://storage.googleapis.com/kubernetes-release/release/${var.cluster_version}/bin/linux/amd64/kubectl"
   }
     provisioner "local-exec" {
-    command = "chmod +x kubectl"
+    command = "sudo chmod +x kubectl"
   }
     provisioner "local-exec" {
-    command = "mv /bin/kubectl /bin/kubectl_eks"
+    command = "sudo mv kubectl /bin/kubectl_eks"
   }
     provisioner "local-exec" {
     command = "curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/aws-iam-authenticator"
   }
     provisioner "local-exec" {
-    command = "chmod +x aws-iam-authenticator"
+    command = "sudo chmod +x aws-iam-authenticator"
   }
     provisioner "local-exec" {
-    command = "mv aws-iam-authenticator /bin"
+    command = "sudo mv aws-iam-authenticator /bin"
   }
     provisioner "local-exec" {
     command = "kubectl_eks get nodes"
