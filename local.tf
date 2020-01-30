@@ -4,7 +4,7 @@ resource "null_resource" "login" {
     command = "aws eks --region ${var.region} update-kubeconfig --name ${var.cluster_name}"
   }
     provisioner "local-exec" {
-    command = 'curl -LO https://storage.googleapis.com/kubernetes-release/release/v"${var.cluster_version}".0/bin/linux/amd64/kubectl'
+    command = "curl -LO https://storage.googleapis.com/kubernetes-release/release/v${var.cluster_version}.0/bin/linux/amd64/kubectl"
   }
     provisioner "local-exec" {
     command = "sudo chmod +x kubectl"
