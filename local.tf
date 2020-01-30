@@ -1,12 +1,12 @@
 resource "null_resource" "login" {
+  triggers = {
+    always_run = "${timestamp()}"
+  }
   depends_on = [module.my-cluster]
     provisioner "local-exec" {
     command = "aws eks --region ${var.region} update-kubeconfig --name ${var.cluster_name}"
   }
     provisioner "local-exec" {
-      triggers = {
-    always_run = "${timestamp()}"
-  }
     command = "curl -LOo /tmp https://storage.googleapis.com/kubernetes-release/release/v${var.cluster_version}.0/bin/linux/amd64/kubectl"
   }
     provisioner "local-exec" {
