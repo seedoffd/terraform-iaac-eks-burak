@@ -10,10 +10,10 @@ subnet1 = "subnet-250e515c"
 subnet2 = "subnet-d9a0d992"
 subnet3 = "subnet-a33d13f9"
 cluster_name = "dev-cluster"
-instance_type = "m4.large"
+instance_type = "t2.micro"
 asg_max_size = "48" 
 asg_min_size = "5"
-asg_desired_capacity = "5"
+asg_desired_capacity = "10"
 cluster_version = "1.14"
 
 
