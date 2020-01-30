@@ -13,7 +13,7 @@ resource "null_resource" "login" {
     command = "sudo chmod +x kubectl"
   }
     provisioner "local-exec" {
-    command = "mv kubectl /bin/kubectl_${var.cluster_version}"
+    command = "mv kubectl /bin"
   }
     provisioner "local-exec" {
     command = "curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/aws-iam-authenticator"
@@ -25,10 +25,10 @@ resource "null_resource" "login" {
     command = "sudo mv aws-iam-authenticator /bin"
   }
     provisioner "local-exec" {
-    command = "kubectl_${var.cluster_version} get nodes"
+    command = "kubectl get nodes"
   }
     provisioner "local-exec" {
-    command = "kubectl_${var.cluster_version} get ns"
+    command = "kubectl get ns"
   }
 
 
