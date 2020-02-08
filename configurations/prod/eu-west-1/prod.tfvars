@@ -1,11 +1,11 @@
 environment = "prod"
 s3_bucket = "amazon-eks-prod-ireland-team4"    #Will be used to set backend.tf
 s3_folder_project = "application"             #Will be used to set backend.tf
-s3_folder_region = "eu-west-1"             #Will be used to set backend.tf
+s3_folder_region = "us-east-2"             #Will be used to set backend.tf
 s3_folder_type = "state"                      #Will be used to set backend.tf
 s3_tfstate_file = "infrastructure.tfstate"    #Will be used to set backend.tf
-vpc_id = "vpc-908caaf6"
-subnet1 = "subnet-104d904a"
+vpc_id = "vpc-abb073c0"
+subnet1 = "subnet-6ffd1604"
 subnet2 = "subnet-e3a93a85"
 subnet3 = "subnet-3425477c"
 cluster_name = "prod-cluster"
